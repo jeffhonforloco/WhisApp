@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build:web"
+  publish = "dist"
+  
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-optional"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  framework = "react"
+  targetPort = 19006
+
+[functions]
+  node_bundler = "esbuild"
